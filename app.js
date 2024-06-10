@@ -3,6 +3,8 @@ const app = express();
 require("dotenv").config();
 const tasksRouter = require("./routes/tasks.js");
 const connectDB = require("./db/connect.js");
+const notFound = require("./middleware/not-found.js");
+const errorHandlerMiddleware = require("./middleware/error-handler.js");
 
 const BACKEND_PORT = process.env.BACKEND_PORT;
 const MONGO_URI = process.env.MONGO_URI;
@@ -20,6 +22,9 @@ app.get("/hello", (req, res) => {
 });
 
 app.use("/api/v1/tasks", tasksRouter);
+
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 const start = async () => {
   try {

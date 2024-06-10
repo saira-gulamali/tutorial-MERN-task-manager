@@ -6,6 +6,7 @@ const {
   getSingleTask,
   updateTask,
   deleteTask,
+  editTask,
 } = require("../controllers/tasks.js");
 
 // routes to setup
@@ -20,5 +21,6 @@ router.post("/", createTask);
 router.get("/:id", getSingleTask);
 router.patch("/:id", updateTask);
 router.delete("/:id", deleteTask);
+router.put("/:id", editTask);
 
 module.exports = router;
