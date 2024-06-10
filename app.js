@@ -6,7 +6,7 @@ const connectDB = require("./db/connect.js");
 const notFound = require("./middleware/not-found.js");
 const errorHandlerMiddleware = require("./middleware/error-handler.js");
 
-const BACKEND_PORT = process.env.BACKEND_PORT;
+const BACKEND_PORT = process.env.BACKEND_PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // static assets
