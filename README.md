@@ -11,7 +11,8 @@ Taken from Node Tutorial and Projects Course - John Smilga
 
 ## Usage
 
-To start the app:
+To start/run the app:
 
+- npm install
 - npm start
 - connect from the browser on localhost:5000
